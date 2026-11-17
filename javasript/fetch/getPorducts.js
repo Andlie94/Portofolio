@@ -1,7 +1,9 @@
 export async function fetchProductData() {
   try {
 
-    const response = await fetch("/data/products.json");
+    const response = await fetch(
+  new URL("../../data/products.json", import.meta.url)
+);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
